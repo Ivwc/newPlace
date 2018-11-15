@@ -110,6 +110,24 @@ class menuModel extends CI_Model {
     }
     
   }
+// -------------------------banner------------------------
+  function addBanner($data){
+    $this->db->insert('meun_banner',$data);
+    $id = $this->db->insert_id();
+    return $id;
+  }
+
+  function editBanner($id,$data){
+    $this->db->where('m_b_id',$id);
+    return $this->db->update('meun_banner',$data);
+
+  }
+
+  function get_banner(){
+    $res = $this->db->get('meun_banner')->row_array();
+    $res['m_b_url'] = getCategoryFile().$res['m_b_url'];
+    return $res;
+  }
 
 
 

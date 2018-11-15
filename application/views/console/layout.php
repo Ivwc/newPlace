@@ -164,25 +164,17 @@
                             <span>首页</span>
                         </a>
                     </li>
-                    <li class="<?php if($path == 'menu_list'){echo 'active';}?>">
+                    <li class="<?php if($path == 'menu_list' || $path == 'menu_banner'){echo 'active';}?>">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">menu</i>
                             <span>菜单</span>
                         </a>
                         <ul class="ml-menu">
+                            <li class="<?php if($path == 'menu_banner'){echo 'active';}?>">
+                                <a href="<?=base_url('console/menu_banner')?>">上方banner</a>
+                            </li>
                             <li class="<?php if($path == 'menu_list'){echo 'active';}?>">
                                 <a href="<?=base_url('console/menu_list')?>">列表</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="<?php if($path == 'place_list'){echo 'active';}?>">
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">folder</i>
-                            <span>会馆介绍</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li class="<?php if($path == 'place_list'){echo 'active';}?>">
-                                <a href="<?=base_url('console/place_list')?>">列表</a>
                             </li>
                         </ul>
                     </li>

@@ -63,7 +63,7 @@
 
 <div class="container-fluid p-0">
   <div class="row">
-    <img style="width:100%" class="h-50"  src="<?php echo base_url('assets/images/header/banner.jpg')?>">
+    <img style="width:100%" class="h-50"  src="<?=$m_b_url?>">
   </div>
 </div>
 

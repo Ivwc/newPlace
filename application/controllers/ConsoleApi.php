@@ -56,7 +56,7 @@ class ConsoleApi extends CI_Controller {
   }
 
   /***************
-        分类 
+        菜单 
   ****************/
   public function addCategory(){
     $data['m_name'] = $this->input->post('m_name');
@@ -125,6 +125,35 @@ class ConsoleApi extends CI_Controller {
     echo json_encode($json_arr);
   }
 
+  public function addMenuBanner(){
+    $data['m_b_name'] = $this->input->post('m_b_name');
+    $m_b_url = $_FILES['m_b_url']['tmp_name']!=''?$_FILES['m_b_url']:'';
+    
+    
+    $m_id = $this->menuModel->addBanner($data);
+    if($m_b_url != ''){
+      $filename = uniqid().$m_b_url['name'];
+      copy($m_b_url['tmp_name'] , getCategoryPath().$filename);
+      $this->menuModel->editBanner($m_id,array('m_b_url'=>$filename.'?'.rand()));
+    }
+    redirect('console/menu_banner','refresh');
+  }
+  
+  public function editMenuBanner(){
+    $m_b_id = $this->input->post('m_b_id');
+    $data['m_b_name'] = $this->input->post('m_b_name');
+    $m_b_url = $_FILES['m_b_url']['tmp_name']!=''?$_FILES['m_b_url']:'';
+    
+    if(!empty($m_b_id) && !empty($data['m_b_name'])){
+      $res = $this->menuModel->editBanner($m_b_id,$data);
+      if($m_b_url != ''){
+        $filename = 'banner.jpg';
+        copy($m_b_url['tmp_name'] , getCategoryPath().$filename);
+        $this->menuModel->editBanner($m_b_id,array('m_b_url'=>$filename.'?'.rand()));
+      }
+    }
+    redirect('console/menu_banner','refresh');
+  }
   /***************
         商品 
   ****************/

@@ -19,6 +19,7 @@ class menu extends CI_Controller {
 
  		$this->load->model('menuModel');
 	
+		$banner = $this->menuModel->get_banner();
 		$m_p_res = $this->menuModel->getMenuList();
 		
 		// echo "<pre>";
@@ -34,7 +35,7 @@ class menu extends CI_Controller {
 
 
 
-		$this->load->view('templates/menu_header');
+		$this->load->view('templates/menu_header',$banner);
 		$this->load->view('templates/menu_body',$data);
 		$this->load->view('templates/menu_footer');
 

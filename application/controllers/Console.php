@@ -24,6 +24,15 @@ class console extends CI_Controller {
 		$this->load->view('console/layout',$data);
 	}
 
+	public function menu_banner(){
+		$user = get_user_session();
+		$this->load->model('menuModel');
+		$data['page'] = 'console/menu/banner';
+		$data['path'] = 'menu_banner';
+		$data['banner'] = $this->menuModel->get_banner();
+		$this->load->view('console/layout',$data);
+	}
+
 	public function menu_list(){
 		$user = get_user_session();
 		$this->load->model('menuModel');
