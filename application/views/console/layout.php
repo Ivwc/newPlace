@@ -24,12 +24,57 @@
 
     <!-- Morris Chart Css-->
     <link href="<?php echo base_url('assets/console/plugins/morrisjs/morris.css') ?>" rel="stylesheet" />
+    
+    <!-- loading Css-->
+    <link href="<?php echo base_url('assets/js/loading/jquery.loading.css') ?>" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="<?php echo base_url('assets/console/css/style.css') ?>" rel="stylesheet">
 
+    <!-- Custom Css -->
+    <link href="<?php echo base_url('assets/console/plugins/sweetalert/sweetalert.css') ?>" rel="stylesheet">
+
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo base_url('assets/console/css/themes/all-themes.css') ?>" rel="stylesheet" />
+
+    <!-- Jquery Core Js -->
+    <script src="<?php echo base_url('assets/console/plugins/jquery/jquery.min.js')?>"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="<?php echo base_url('assets/console/plugins/bootstrap/js/bootstrap.js')?>"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="<?php echo base_url('assets/console/plugins/bootstrap-select/js/bootstrap-select.js')?>"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="<?php echo base_url('assets/console/plugins/jquery-slimscroll/jquery.slimscroll.js')?>"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="<?php echo base_url('assets/console/plugins/node-waves/waves.js')?>"></script>
+
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="<?php echo base_url('assets/console/plugins/jquery-countto/jquery.countTo.js')?>"></script>
+
+    <!-- Morris Plugin Js -->
+    <script src="<?php echo base_url('assets/console/plugins/raphael/raphael.min.js')?>"></script>
+    <script src="<?php echo base_url('assets/console/plugins/morrisjs/morris.js')?>"></script>
+
+    
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="<?php echo base_url('assets/console/plugins/jquery-sparkline/jquery.sparkline.js')?>"></script>
+
+    <!-- Custom Js -->
+    <script src="<?php echo base_url('assets/console/js/admin.js')?>"></script>
+    
+    <!-- loading Js-->
+    <script src="<?php echo base_url('assets/js/loading/jquery.loading.js')?>"></script>
+
+    <!-- sweetalert Js-->
+    <script src="<?php echo base_url('assets/console/plugins/sweetalert/sweetalert.min.js')?>"></script>
+
+    <!-- Demo Js -->
+    <script src="<?php echo base_url('assets/console/js/demo.js')?>"></script>
+    
 </head>
 
 <body class="theme-red">
@@ -307,38 +352,7 @@
         </div>
     </section>
 
-    <!-- Jquery Core Js -->
-    <script src="<?php echo base_url('assets/console/plugins/jquery/jquery.min.js')?>"></script>
-
-    <!-- Bootstrap Core Js -->
-    <script src="<?php echo base_url('assets/console/plugins/bootstrap/js/bootstrap.js')?>"></script>
-
-    <!-- Select Plugin Js -->
-    <script src="<?php echo base_url('assets/console/plugins/bootstrap-select/js/bootstrap-select.js')?>"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="<?php echo base_url('assets/console/plugins/jquery-slimscroll/jquery.slimscroll.js')?>"></script>
-
-    <!-- Waves Effect Plugin Js -->
-    <script src="<?php echo base_url('assets/console/plugins/node-waves/waves.js')?>"></script>
-
-    <!-- Jquery CountTo Plugin Js -->
-    <script src="<?php echo base_url('assets/console/plugins/jquery-countto/jquery.countTo.js')?>"></script>
-
-    <!-- Morris Plugin Js -->
-    <script src="<?php echo base_url('assets/console/plugins/raphael/raphael.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/console/plugins/morrisjs/morris.js')?>"></script>
-
     
-    <!-- Sparkline Chart Plugin Js -->
-    <script src="<?php echo base_url('assets/console/plugins/jquery-sparkline/jquery.sparkline.js')?>"></script>
-
-    <!-- Custom Js -->
-    <script src="<?php echo base_url('assets/console/js/admin.js')?>"></script>
-    
-
-    <!-- Demo Js -->
-    <script src="<?php echo base_url('assets/console/js/demo.js')?>"></script>
 </body>
 
 </html>

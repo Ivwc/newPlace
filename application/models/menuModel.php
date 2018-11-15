@@ -6,14 +6,6 @@ class menuModel extends CI_Model {
 
   function get_menu_product(){
 
-    // 写你的跟sql沟通的扣
-    // $this->db->where('m_id','1');
-
-    // $this->db->order_by('num','ASC');
-    // $this->db->select('*');
-    // $this->db->from('menu');
-    // $this->db->join('menu','menu.m_id=product.m_id');
-    
     $m_res = $this->db->get('menu')->result_array();
     
 
@@ -21,23 +13,11 @@ class menuModel extends CI_Model {
 
         $this->db->where('m_id', $value['m_id']); 
         $p_res[$value['m_id']] = $this->db->get('product')->result_array();
-        //这句意思是$p_res[1]=
         $p_res[$value['m_id']]['menu'] = $value;
 
     }
     
     
-
-    
-    // $m_p_res=array($m_res,$p_res);
-    // $res = $this->db->get('menu')->row_array();
-    //  print_r($res);
-
-    // $this->db->select('m_id,num,xxx,rrr');
-    // $this->db->where('栏位','123');篩選
-    // $this->db->order_by('栏位','ASC');
-    // $res = $this->db->get('资料表名称')->result_array();如果是"多"笔资料用这个
-    // $res = $this->db->get('资料表名称')->row_array();如果是"单"笔资料用这个
     return $p_res;
   }
 
@@ -48,6 +28,87 @@ class menuModel extends CI_Model {
 
     return $m_b_res;
 
+  }
+
+  function addCategory($data){
+    $c = $this->db->count_all_results('menu');
+    $data['m_sequence'] = $c;
+    $this->db->insert('menu',$data);
+    $id = $this->db->insert_id();
+    return $id;
+  }
+
+  function editCategory($id,$data){
+    $this->db->where('m_id',$id);
+    return $this->db->update('menu',$data);
+
+  }
+
+  function getMenuList(){
+    $this->db->order_by('m_sequence','ASC');
+    $m_res = $this->db->get('menu')->result_array();
+    
+
+    foreach($m_res as $key=>$value){
+      $m_res[$key]['m_pic'] = getCategoryFile().$value['m_pic'];
+        $this->db->where('m_id', $value['m_id']); 
+        $this->db->order_by('p_sequence','ASC');
+        $res = $this->db->get('product')->result_array();
+        foreach ($res as $pk => $pv) {
+          $res[$pk]['p_pic_url'] = getProductFile().$pv['p_pic_url'];
+        }
+        $m_res[$key]['product'] = $res;
+
+    }
+    return $m_res;
+  }
+
+  function removeCategory($id){
+    $this->db->where('m_id',$id);
+    $menu = $this->db->get('menu')->row_array();
+
+    $this->db->where('m_id',$id);
+    $this->db->delete('menu');
+
+    $filename = explode('?',$menu['m_pic']);
+    if(is_file(getCategoryPath().$filename[0])){
+      unlink(getCategoryPath().$filename[0]);
+    }
+    $this->db->where('m_id',$menu['m_id']);
+    $product = $this->db->get('product')->result_array();
+    $this->load->model('productModel');
+    foreach ($product as $key => $value) {
+      $this->productModel->removeProduct($value['p_id']);
+    }
+    $this->setSequence();
+    return true;
+  }
+
+  function setCategorySeqence($data){
+    $this->db->where('m_id',$data['id']);
+    $category = $this->db->get('menu')->row_array();
+
+    $this->db->where('m_id',$data['id']);
+    if($data['type'] == 'up'){
+      $this->db->update('menu',array('m_sequence'=>$category['m_sequence']-1.5));
+    }else{
+      $this->db->update('menu',array('m_sequence'=>$category['m_sequence']+1.5));
+    }
+
+    $this->setSequence();
+
+    return true;
+    
+  }
+
+  function setSequence(){
+    $this->db->order_by('m_sequence','ASC');
+    $res = $this->db->get('menu')->result_array();
+    foreach ($res as $key => $value) {
+      $this->db->where('m_id',$value['m_id']);
+      $this->db->update('menu',array('m_sequence'=>$key));
+    }
+    
   }
 
 

@@ -11051,3 +11051,23 @@ html.ie11 .bs-searchbox .form-control {
     /* Support for IE. */
     font-feature-settings: 'liga';
 }
+
+.form-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-item label {
+    min-width: 80px;
+    margin-bottom: 0px;
+}
+
+.form-item .item-block {
+    width: 100%;
+}
+
+.form-item .item-block input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+}

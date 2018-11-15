@@ -26,8 +26,10 @@ class console extends CI_Controller {
 
 	public function menu_list(){
 		$user = get_user_session();
+		$this->load->model('menuModel');
 		$data['page'] = 'console/menu/list';
 		$data['path'] = 'menu_list';
+		$data['menu'] = $this->menuModel->getMenuList();
 		$this->load->view('console/layout',$data);
 	}
 

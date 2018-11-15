@@ -36,26 +36,49 @@ if ( ! function_exists('setImportAsset'))
 	}
 }
 
-if ( ! function_exists('getArticlePath'))
+if ( ! function_exists('getCategoryPath'))
 {
-	function getArticlePath($id)
+	function getCategoryPath()
 	{
 		$parts = parse_url(base_url());
 		// return $parts['scheme']."://".$parts['host'] . $parts['path'];
-		$path = "assets/images/article/".$id;
+		$path = "assets/images/category/";
 		if(!is_dir($path)){
 			mkdir($path,0777,true);
 		}
 		return $path.'/';
 	}
 }
-if ( ! function_exists('getArticleFile'))
+if ( ! function_exists('getCategoryFile'))
 {
-	function getArticleFile($id)
+	function getCategoryFile()
 	{
 		$parts = parse_url(base_url());
 		// return $parts['scheme']."://".$parts['host'] . $parts['path'];
-		return $parts['scheme']."://".$parts['host'] ."/FHclinicConsole/assets/images/article/".$id."/";
+		return $parts['scheme']."://".$parts['host'] ."/newPlace/assets/images/category/";
+	}
+}
+
+if ( ! function_exists('getProductPath'))
+{
+	function getProductPath()
+	{
+		$parts = parse_url(base_url());
+		// return $parts['scheme']."://".$parts['host'] . $parts['path'];
+		$path = "assets/images/product/";
+		if(!is_dir($path)){
+			mkdir($path,0777,true);
+		}
+		return $path.'/';
+	}
+}
+if ( ! function_exists('getProductFile'))
+{
+	function getProductFile()
+	{
+		$parts = parse_url(base_url());
+		// return $parts['scheme']."://".$parts['host'] . $parts['path'];
+		return $parts['scheme']."://".$parts['host'] ."/newPlace/assets/images/product/";
 	}
 }
 
