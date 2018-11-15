@@ -19,7 +19,7 @@ class menu extends CI_Controller {
 
  		$this->load->model('menuModel');
 	
-		$m_p_res = $this->menuModel->get_menu_product();
+		$m_p_res = $this->menuModel->getMenuList();
 		
 		// echo "<pre>";
      	// var_dump($m_p_res); 
