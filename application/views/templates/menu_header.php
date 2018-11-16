@@ -62,9 +62,7 @@
 </style>
 
 <div class="container-fluid p-0">
-  <div class="row">
-    <img style="width:100%" class="h-50"  src="<?=$m_b_url?>">
-  </div>
+  <img class="w-100"  src="<?=$m_b_url?>">
 </div>
 
 

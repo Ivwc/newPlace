@@ -23,10 +23,16 @@ body{
   }
   .nav-link{
     padding:1rem 1rem;
+    border-top-left-radius:0 !important;
+    border-top-right-radius:0 !important;
+    border:none !important;
   }
   .nav-link img{
     width:40px;
     height:40px;
+  }
+  .nav{
+    border-bottom:none !important;
   }
   #productPic{
     border-top-left-radius: 0.2rem;
