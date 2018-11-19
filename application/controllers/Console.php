@@ -15,6 +15,14 @@ class console extends CI_Controller {
 		$this->load->view('console/sign-in');
 	}
 
+	public function change_password(){
+		$user = get_user_session();
+		$data['page'] = 'console/changePassword';
+		$data['path'] = 'index';
+		$data['user'] = $user;
+		$this->load->view('console/layout',$data);
+	}
+
 
 	public function index(){
 		$user = get_user_session();

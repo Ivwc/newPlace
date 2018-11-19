@@ -55,6 +55,28 @@ class ConsoleApi extends CI_Controller {
     redirect('console/login','refresh');
   }
 
+  public function chkmemberPassword(){
+    $mId=get_user_session('mId');
+    $oldPassword = $this->input->post('oldPassword');
+    $this->db->where('mId',$mId);
+    $res = $this->db->get('member')->row_array();
+    if($res['memberPassword'] == $oldPassword){
+      $json_arr['status'] = '200';
+      $json_arr['msg'] = '密码符合';  
+    }else{
+      $json_arr['status'] = '204';
+      $json_arr['msg'] = '密码不符合';  
+    }
+    echo json_encode($json_arr);
+  }
+  public function changePassword(){
+    $mId=get_user_session('mId');
+    $memberPassword = $this->input->post('memberPassword');
+    $this->db->where('mId',$mId);
+    $this->db->update('member',array('memberPassword'=>$memberPassword));
+    redirect('console/change_password','refresh');
+  }
+
   /***************
         菜单 
   ****************/
