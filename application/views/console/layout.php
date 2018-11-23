@@ -159,12 +159,12 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">功能列表</li>
-                    <li class="<?php if($path == 'index'){echo 'active';}?>">
+                    <!-- <li class="<?php if($path == 'index'){echo 'active';}?>">
                         <a href="<?=base_url('console/index')?>">
                             <i class="material-icons">home</i>
                             <span>首页</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="<?php if($path == 'menu_list' || $path == 'menu_banner'){echo 'active';}?>">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">menu</i>

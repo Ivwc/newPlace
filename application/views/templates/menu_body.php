@@ -72,7 +72,7 @@ body{
               <div class="nav flex-column nav-tabs" id="menutab" role="tablist" aria-orientation="vertical">
               <?php foreach($data as $key => $value){  
                 $activeTest="";
-                  if($key==1)$activeTest="active";
+                  if($key==0)$activeTest="active";
                 ?>
                 <a class="nav-link <?php echo $activeTest?>" id="menu-info-tab-<?php echo $value['m_id']?>" data-toggle="pill" href="#menu-info-<?php echo $key;?>" role="tab" aria-controls="<?php echo $key;?>" aria-selected="true">
                     <!-- <div class="row justify-content-center"> -->
@@ -92,7 +92,7 @@ body{
                 <?php foreach($data as $m_key => $m_value){ 
                     $activeTest="";
                     // echo $m_key;
-                    if($m_key==1)$activeTest="active";
+                    if($m_key==0)$activeTest="active";
 
                     //  echo var_dump($m_value);
                   ?>

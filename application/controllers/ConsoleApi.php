@@ -246,6 +246,15 @@ class ConsoleApi extends CI_Controller {
     }
     echo json_encode($json_arr);
   }
+
+  public function addMenus(){
+    $num = $this->input->get('num');
+    for ($i=0; $i < $num; $i++) { 
+      $data['m_pic'] = '1.png';
+      $m_id = $this->menuModel->addCategory($data);
+      $this->menuModel->editCategory($m_id,array('m_pic'=>'menu_'.$m_id.'.png'));
+    }
+  }
   
 
 }
