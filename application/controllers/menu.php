@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class menu extends CI_Controller {
+class Menu extends CI_Controller {
 
 
 	public function __construct()
@@ -15,7 +15,7 @@ class menu extends CI_Controller {
 
 	
 
-	public function menu_info(){
+	public function index(){
 
  		$this->load->model('menuModel');
 	

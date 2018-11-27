@@ -110,10 +110,10 @@ body{
                         
                           
                             <div class="d-flex flex-column mr-2 mr-sm-3 justify-content-center" style="flex:1;">
-                              <h6 id="productName" class="blod9 text-right"><?echo $p_value['p_name']?></h6>   
+                              <h6 id="productName" class="blod9 text-right"><?php echo $p_value['p_name']?></h6>   
                             
                             
-                              <h6 id="productPrice" class="blod9 text-right"><small>¥</small> <?echo $p_value['p_price']?><small>/盘</small></h6> 
+                              <h6 id="productPrice" class="blod9 text-right"><small>¥</small> <?php echo $p_value['p_price']?><small>/盘</small></h6> 
                             </div>                 
                             
                           

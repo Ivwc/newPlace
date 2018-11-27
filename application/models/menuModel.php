@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class menuModel extends CI_Model {
+class MenuModel extends CI_Model {
 
   function get_menu_product(){
 
