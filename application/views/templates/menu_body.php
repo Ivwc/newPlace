@@ -1,6 +1,7 @@
 <style>
 body{
   padding-bottom:0px;
+  font-size:12px;
 }
   .br5{
     border-radius: 0.2rem;
@@ -39,26 +40,28 @@ body{
   }
   
   .menu-item{
-      flex-direction:column;
-    }
-    .menu-item img{
-      width:100%;
-      height:auto;
-    }
+    flex-direction:row;
+    padding:12px;
+  }
+  .menu-item img{
+    width:130px;
+    height:90px;
+  }
   @media (min-width: 100px) {
     
   }
   @media (min-width: 374px) {
     .nav-link img{
-      width:60px;
-      height:60px;
+      width:50px;
+      height:50px;
     }
     .menu-item img{
       width:152px;
       height:106px;
     }
-    .menu-item{
-      flex-direction:row;
+    body{
+      padding-bottom:0px;
+      font-size:16px;
     }
   }
 
@@ -104,7 +107,7 @@ body{
                     <?php foreach($m_value['product'] as $p_key => $p_value){ ?>
                       
                     <div class="container-fluid"> 
-                        <div class="row p-2 mt-3 shadow-5 br5 justify-content-between menu-item">
+                        <div class="row mt-3 shadow-5 br5 justify-content-between menu-item">
                           
                           
                               <img id="productPic" class=""  src="<?php echo $p_value['p_pic_url']?>" >

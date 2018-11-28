@@ -81,12 +81,12 @@
   <button class="btn btn-primary add-category">新增分类</button>
   <div class="add-category-block">
     <form action="<?=base_url('consoleApi/addCategory')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
-      <!-- <div class="form-item">
+      <div class="form-item">
         <label for="cName">分类名称:</label>
         <div class="item-block">
           <input type="text" name="m_name" id="m_name" placeholder="请输入分类名称" required>
         </div>
-      </div> -->
+      </div>
       <div class="form-item">
         <label for="cName">分类图片:</label>
         <div class="item-block">
@@ -121,10 +121,10 @@
                   <form action="<?=base_url('consoleApi/editCategory')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
                     <input type="hidden" name="m_id" value="<?=$value['m_id']?>">
                     <td>
-                      <!-- <span class="preview-span">
+                      <span class="preview-span">
                         <?=$value['m_name']?>
-                      </span> -->
-                      <!-- <input class="edit-input" type="text" value="<?=$value['m_name']?>" name="m_name"> -->
+                      </span>
+                      <input class="edit-input" type="text" value="<?=$value['m_name']?>" name="m_name">
                       <input class="edit-input" type="file" name="cateImg" accept="image/*">
                       <img src="<?=$value['m_pic']?>" alt="" class="thumb-img preview-span">
                     </td>
