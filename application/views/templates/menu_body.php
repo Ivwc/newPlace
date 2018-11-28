@@ -9,20 +9,23 @@ body{
     box-shadow:1px 1px 4px 1px rgba(0,0,0,.2);
   }
   #productName{
-    font-size:1rem;
+    font-size:0.8rem;
   }
   #productPrice{
-    color:red;
+    color:#C44442;
     font-size:1.5em;
   }
   #productPrice small{
     font-size:0.8rem;
   }
-  .blod9{
-    font-weight:900;
+  .blod5{
+    font-weight:500;
+  }
+  .blod7{
+    font-weight:700;
   }
   .nav-link{
-    padding:1rem 1rem;
+    padding:1rem .5rem;
     border-top-left-radius:0 !important;
     border-top-right-radius:0 !important;
     border:none !important;
@@ -34,15 +37,13 @@ body{
   .nav{
     border-bottom:none !important;
   }
-  #productPic{
-    border-top-left-radius: 0.2rem;
-    border-bottom-left-radius: 0.2rem;
-  }
+  
   .menu-item{
       flex-direction:column;
     }
     .menu-item img{
       width:100%;
+      height:auto;
     }
   @media (min-width: 100px) {
     
@@ -53,7 +54,8 @@ body{
       height:60px;
     }
     .menu-item img{
-      width:120px;
+      width:152px;
+      height:106px;
     }
     .menu-item{
       flex-direction:row;
@@ -102,7 +104,7 @@ body{
                     <?php foreach($m_value['product'] as $p_key => $p_value){ ?>
                       
                     <div class="container-fluid"> 
-                        <div class="row mt-3 shadow-5 br5 justify-content-between menu-item">
+                        <div class="row p-2 mt-3 shadow-5 br5 justify-content-between menu-item">
                           
                           
                               <img id="productPic" class=""  src="<?php echo $p_value['p_pic_url']?>" >
@@ -110,10 +112,10 @@ body{
                         
                           
                             <div class="d-flex flex-column mr-2 mr-sm-3 justify-content-center" style="flex:1;">
-                              <h6 id="productName" class="blod9 text-right"><?php echo $p_value['p_name']?></h6>   
+                              <h6 id="productName" class="text-right"><?php echo $p_value['p_name']?></h6>   
                             
                             
-                              <h6 id="productPrice" class="blod9 text-right"><small>¥</small> <?php echo $p_value['p_price']?><small>/盘</small></h6> 
+                              <h6 id="productPrice" class="blod7 text-right"><small>¥</small> <?php echo $p_value['p_price']?><small>/盘</small></h6> 
                             </div>                 
                             
                           

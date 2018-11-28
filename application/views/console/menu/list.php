@@ -80,7 +80,7 @@
 <div class="m-b-10">
   <button class="btn btn-primary add-category">新增分类</button>
   <div class="add-category-block">
-    <form action="<?=base_url('consoleAPI/addCategory')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
+    <form action="<?=base_url('consoleApi/addCategory')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
       <!-- <div class="form-item">
         <label for="cName">分类名称:</label>
         <div class="item-block">
@@ -118,7 +118,7 @@
           <tbody>
               <?php foreach ($menu as $key => $value) { ?>
                 <tr data-id="<?=$value['m_id']?>" class="tr-item" data-tr="1">
-                  <form action="<?=base_url('consoleAPI/editCategory')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
+                  <form action="<?=base_url('consoleApi/editCategory')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
                     <input type="hidden" name="m_id" value="<?=$value['m_id']?>">
                     <td>
                       <!-- <span class="preview-span">
@@ -163,7 +163,7 @@
                         </thead>
                           <?php foreach ($value['product'] as $nk => $nv) { ?>
                             <tr data-id="<?=$nv['p_id']?>" class=" tr-item" data-tr="2">
-                              <form action="<?=base_url('consoleAPI/editProduct')?>" method="post" class="form-horizontal category-form"  enctype="multipart/form-data">
+                              <form action="<?=base_url('consoleApi/editProduct')?>" method="post" class="form-horizontal category-form"  enctype="multipart/form-data">
                                 <input type="hidden" name="p_id" value="<?=$nv['p_id']?>">
                                 <td>|___<span class="preview-span"><?=$nv['p_name']?>
                                   <i class="icon-lock align-top bigger-125 icon-on-right"></i>
@@ -214,7 +214,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">新增商品</h4>
         </div>
-        <form action="<?=base_url('consoleAPI/addProduct')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
+        <form action="<?=base_url('consoleApi/addProduct')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
           <input type="hidden" name="m_id" id="add_p_m_id" placeholder="请输入商品名称" required>
           <div class="modal-body">
             <div class="form-item">
@@ -312,10 +312,10 @@ $('[data-todo]').on('click',function(e){
         var apiurl = '';
         switch (type) {
           case 'menu':
-            apiurl = '<?=base_url('consoleAPI/removeCategory')?>';
+            apiurl = '<?=base_url('consoleApi/removeCategory')?>';
             break;
           case 'product':
-            apiurl = '<?=base_url('consoleAPI/removeProduct')?>';
+            apiurl = '<?=base_url('consoleApi/removeProduct')?>';
             break;
         }
         $.post(apiurl,{
@@ -340,7 +340,7 @@ $('[data-todo]').on('click',function(e){
     // case 'submit':
     //   var cName = $(this).closest('tr').find('.edit-input').val();
     //   if(cName != ''){
-    //     $.post('<?=base_url('consoleAPI/editCategory')?>',{
+    //     $.post('<?=base_url('consoleApi/editCategory')?>',{
     //       id:id,
     //       cName:cName
     //     },function(data){
@@ -358,10 +358,10 @@ $('[data-todo]').on('click',function(e){
       var apiurl = '';
       switch (type) {
         case 'menu':
-          apiurl = '<?=base_url('consoleAPI/setCategorySeqence')?>';
+          apiurl = '<?=base_url('consoleApi/setCategorySeqence')?>';
           break;
         case 'product':
-          apiurl = '<?=base_url('consoleAPI/setProductSeqence')?>';
+          apiurl = '<?=base_url('consoleApi/setProductSeqence')?>';
           break;
       }
       $.post(apiurl,{
@@ -379,10 +379,10 @@ $('[data-todo]').on('click',function(e){
       var apiurl = '';
       switch (type) {
         case 'menu':
-          apiurl = '<?=base_url('consoleAPI/setCategorySeqence')?>';
+          apiurl = '<?=base_url('consoleApi/setCategorySeqence')?>';
           break;
         case 'product':
-          apiurl = '<?=base_url('consoleAPI/setProductSeqence')?>';
+          apiurl = '<?=base_url('consoleApi/setProductSeqence')?>';
           break;
       }
       $.post(apiurl,{

@@ -80,7 +80,7 @@
 <div class="m-b-10">
   <!-- <button class="btn btn-primary add-category">新增Banner</button>
   <div class="add-category-block">
-    <form action="<?=base_url('consoleAPI/addMenuBanner')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
+    <form action="<?=base_url('consoleApi/addMenuBanner')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
       <div class="form-item">
         <label for="cName">Banner名称:</label>
         <div class="item-block">
@@ -102,7 +102,7 @@
   <p>名称：<?=$banner['m_b_name']?></p>
   <img src="<?=$banner['m_b_url']?>" alt="">
   <div class="add-category-block">
-    <form action="<?=base_url('consoleAPI/editMenuBanner')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
+    <form action="<?=base_url('/editMenuBanner')?>" method="post" class="form-horizontal category-form" enctype="multipart/form-data">
     <input type="hidden" name="m_b_id" value="<?=$banner['m_b_id']?>">
       <div class="form-item">
         <label for="cName">Banner名称:</label>
